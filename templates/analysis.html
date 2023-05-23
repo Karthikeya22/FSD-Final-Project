@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block css %}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(23, 64, 28, 0.4) 10%,rgba(41, 82, 37, 0) 40%),-moz-linear-gradient(top,  rgba(29, 66, 40, 0.25) 0%, rgba(39, 75, 39, 0.4) 100%), -moz-linear-gradient(-45deg,  #1e4a1a 0%, #235331 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(23, 64, 28, 0.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(17, 49, 30, 0.25) 0%,rgba(27, 62, 35, 0.4) 100%), -webkit-linear-gradient(-45deg,  #1d3e29 0%,#194127 100%);
+	background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #14350f 0%,#173415 100%);
+	background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #08150e 0%,#090d0b 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #141c16 0%,#142018 100%);
+}
+main{
+    margin:10px;
+}
+
+.container{
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+.card{
+    display: inline-flex;
+    top: 0%;
+    left: 18%;
+    border: solid 1px white;
+    width:64%;
+    height:23%; 
+	overflow: hidden;
+	position: relative;
+}
+
+.image_con{
+    height: 70%;
+    width: 18%;
+    position: fixed;
+    top: 15%;
+    left: 0%;
+}
+
+.image_con2{
+    height: 70%;
+    width: 18%;
+    position: fixed;
+    top: 15%;
+    right: 0%;
+}
+
+.img2, .img3{
+    height: 100%;
+    width: 100%;
+}
+
+.img{
+    height: 100%;
+    width: 200px;
+}
+
+.card-content {
+    color: white;
+    margin-left: 8px;
+    height: 100%;
+}
+
+.card-content h3{
+    font-size: 2rem;
+}
+
+.card-content p{
+    font-size: 1rem;
+}
+
+.card-content a{
+    bottom: 0%;
+}
+
+header{
+    background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(23, 64, 28, 0.4) 10%,rgba(41, 82, 37, 0) 40%),-moz-linear-gradient(top,  rgba(29, 66, 40, 0.25) 0%, rgba(39, 75, 39, 0.4) 100%), -moz-linear-gradient(-45deg,  #1e4a1a 0%, #235331 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(23, 64, 28, 0.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(17, 49, 30, 0.25) 0%,rgba(27, 62, 35, 0.4) 100%), -webkit-linear-gradient(-45deg,  #1d3e29 0%,#194127 100%);
+	background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #14350f 0%,#173415 100%);
+	background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #08150e 0%,#090d0b 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #141c16 0%,#142018 100%);
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0.5rem;
+}
+.logo {
+    font-size: 25px;
+    font-weight: 600;
+    color: green;
+    padding: 0 15px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.predict {
+    bottom: 0%;
+}
+
+.ha {
+    border: none;
+    background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(23, 64, 28, 0.4) 10%,rgba(41, 82, 37, 0) 40%),-moz-linear-gradient(top,  rgba(29, 66, 40, 0.25) 0%, rgba(39, 75, 39, 0.4) 100%), -moz-linear-gradient(-45deg,  #1e4a1a 0%, #235331 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(23, 64, 28, 0.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(17, 49, 30, 0.25) 0%,rgba(27, 62, 35, 0.4) 100%), -webkit-linear-gradient(-45deg,  #1d3e29 0%,#194127 100%);
+	background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #14350f 0%,#173415 100%);
+	background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #08150e 0%,#090d0b 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #141c16 0%,#142018 100%);
+    color: white;
+    font-size: 28px;
+    
+}
+
+{% endblock css %}
+{% block body %}
+{% load static %}
+
+
+<header>
+    <div class="logo" >
+        <h1>Kissaan.com</h1>
+    </div>
+</header>
+<main>
+        <div class="container">
+            <div class="image_con"><img src="/static/soil.avif" alt="wrong" class='img2'></div>
+            <div class="card-line">    
+                {% for j in crop|slice:":" %}
+                <form action="result1">
+                    {% csrf_token %}
+                    <div class="card">
+                        <div class="card-images">
+                            <img class="img" src='/media/{{j.crop_image}}' alt="My image">
+                        </div>
+                            <div class="card-content">
+                                <input name='crop_Name' class="ha" value={{j.crop_name}} readonly>
+                                <br>
+                                <p>{{j.description}}</p>
+                                <input type="submit" value="PREDICT">
+                            </div>
+                    </div>
+                </form>
+                {% endfor %}
+                </div>
+            <div class="image_con2"><img src="/static/hand_soil.avif" alt="wrong" class="img3"></span>
+        </div>
+</main>
+{% endblock body %}

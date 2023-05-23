@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block css %}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background-image: url("/static/kisan_image.WEBP");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+main{
+    margin:10px;
+}
+
+.card-line{
+    display: inline-flex;
+    justify-content: space-around;
+}
+.card{
+    margin:10px;
+    width:400px;
+    height:700px;
+    transition: .5s all ease;
+    transform: rotateX(10deg) scale(0.8);
+    {% comment %} box-shadow: 0px 11px 20px 5px #868080; {% endcomment %}
+    animation: entry 1s linear 1;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	position: relative;
+	{% comment %} transition: .3s; {% endcomment %}
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: rotate(0deg) scale(1);
+    transition: .5s all ease;
+    z-index: 400;
+  }
+
+{% comment %} .card-images{
+    width:inherit;
+    height:85%;
+} {% endcomment %}
+.card-content{
+    height:15%;
+    padding:10px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.img{
+    height: 100%;
+    width:inherit;
+}
+.card-link{
+    text-decoration: none;
+    font-size:22px;
+    color: white;
+}
+
+header{
+    background-color: #050608;
+    display: flex;
+    justify-content: center; 
+    padding: 1rem;
+    margin-bottom: 20px;
+}
+
+.logo {
+    color: white;
+}
+
+.fa-solid {
+    color:white;
+}
+
+.card-images {
+    width:inherit;
+    height:85%;
+	box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	position: relative;
+	transition: .3s;
+	margin-right: 50px;
+}
+
+img {
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: .8s;
+}
+
+.fas {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(1500px, -50%);
+	z-index: 10;
+	color: #fff;
+	transition: .8s;
+	transition-timing-function: linear;
+}
+
+.card-images:after {
+	content: '';
+	width: 500px;
+	height: 700px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-140%, -50%);
+	z-index: 1;
+	background: rgba(24, 220, 255, 0.8);
+	transition: 0.8s;
+}
+
+.card-images:hover:after {
+	transform: translate(-50%, -50%);
+}
+
+.card-images:hover img {
+	transform: translate(-50%, -50%) scale(1.4);
+}
+
+.card:hover .fas {
+	transform: translate(-50%, -50%);
+	transition-timing-function: ease;
+}
+
+{% endblock css %}
+{% block body %}
+{% load static %}
+
+
+<header>
+    <div class="logo" >
+        <h1>Kissaan.com</h1>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="card-line">    
+            {% for j in crop|slice:":" %}
+                <div class="card">
+                    <div class="card-images">
+                        <img class="img" src='/media/{{j.crop_image}}' alt="My image">
+                        <i class="fas fa-search fa-4x "></i>
+                    </div>
+                    <div class="card-content">
+                        <a href="" class="card-link">
+                            <h3>{{j.crop_name}}</h3>
+                        </a>
+                        <a href=""><i class="fa-solid fa-arrow-right "></i></a>
+                    </div>
+                </div>
+            {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+            </div><div class="card-line">
+            {% endif %}
+                
+            {% endfor %}
+    </div>
+</main>
+{% endblock body %}
